@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const https = require('https');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -64,8 +65,8 @@ app.post("/", function(req, res) {
     // res.send("Thank you for signing up!");
 })
 
-app.listen(3000, function(req, res) {
-    console.log("Server is up on port 3000");
+app.listen(PORT, function(req, res) {
+    console.log("Server is up on port ${PORT}");
 })
 
 // APIkey
